@@ -10,15 +10,11 @@ export async function generateStaticParams() {
   return getAllPostIds();
 }
 
-export async function getPost(params) {
-  return await getPostData(params.id);
-}
-
 export default async function Post({ params }) {
-  const postData = await getPost(params);
+  const postData = await getPostData(params.id);
   
   return (
-    <Layout home={{}}>
+    <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>

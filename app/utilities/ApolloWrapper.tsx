@@ -10,9 +10,9 @@ import {
 
 function makeClient() {
   const httpLink = new HttpLink({
-    uri: process.env.NEXT_PUBLIC_HASURA_URL,
+    uri: process.env.HASURA_PROJECT_ENDPOINT,
     headers: {
-      "x-hasura-admin-secret": process.env.NEXT_PUBLIC_HASURA_ADMIN_SECRET as string,
+      "x-hasura-admin-secret": process.env.HASURA_ADMIN_SECRET as string,
     },
   });
 

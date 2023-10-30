@@ -12,7 +12,8 @@ function makeClient() {
   const httpLink = new HttpLink({
     uri: process.env.HASURA_PROJECT_ENDPOINT,
     headers: {
-      "x-hasura-admin-secret": process.env.TEST as string,
+      /* @ts-ignore */
+      "x-hasura-admin-secret": process.env.TEST,
     },
   });
 

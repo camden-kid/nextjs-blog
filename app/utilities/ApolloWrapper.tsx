@@ -10,9 +10,9 @@ import {
 
 function makeClient() {
   const httpLink = new HttpLink({
-    uri: "https://current-akita-89.hasura.app/v1/graphql",
+    uri: process.env.NEXT_PUBLIC_HASURA_URL,
     headers: {
-      "x-hasura-admin-secret": "DZhu4ZtZ0rA0dsAeeYpTt7Keho7id00RqzEGiQDcTn6k5i9O0u72aL3nzm5k9Onl",
+      "x-hasura-admin-secret": process.env.NEXT_PUBLIC_HASURA_ADMIN_SECRET as string,
     },
   });
 

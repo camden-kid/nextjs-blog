@@ -1,9 +1,8 @@
 import "../styles/globals.css";
+import MainLayout from "./components/MainLayout/MainLayout";
 import { ApolloWrapper } from "./utilities/ApolloWrapper";
 
 export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
   children,
 }: {
   children: React.ReactNode;
@@ -11,7 +10,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ApolloWrapper>{children}</ApolloWrapper>
+        <ApolloWrapper>
+          <MainLayout>{children}</MainLayout>
+        </ApolloWrapper>
       </body>
     </html>
   );

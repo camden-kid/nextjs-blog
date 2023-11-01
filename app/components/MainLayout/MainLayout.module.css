@@ -1,0 +1,39 @@
+.header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: calc(100vh - 90px);
+  display: flex;
+}
+
+.nav {
+  background: green;
+  width: 15%;
+  height: 100%;
+}
+
+.main {
+  width: 70%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.aside {
+  background: orange;
+  width: 15%;
+  height: 100%;
+}

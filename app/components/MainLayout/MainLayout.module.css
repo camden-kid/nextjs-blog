@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid grey;
 }
 
 .footer {
@@ -12,6 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid grey;
 }
 
 .container {
@@ -21,9 +23,9 @@
 }
 
 .nav {
-  background: green;
   width: 15%;
   height: 100%;
+  border-right: 1px solid grey;
 }
 
 .main {
@@ -33,7 +35,7 @@
 }
 
 .aside {
-  background: orange;
   width: 15%;
   height: 100%;
+  border-left: 1px solid grey;
 }

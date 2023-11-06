@@ -4,7 +4,7 @@ export default function MainLayout({ children }): JSX.Element {
   return (
     <>
       <header className={styles.header}>
-        Blogger [Next.js, Apollo Client, Hasura, MongoDB, Material UI]
+        Blogger [Next.js, GraphQL, Apollo Client, Hasura, MongoDB, Material UI]
       </header>
       <div className={styles.container}>
         <nav className={styles.nav}></nav>

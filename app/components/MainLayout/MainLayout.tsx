@@ -1,15 +1,15 @@
+import Aside from "../Aside/Aside";
+import Nav from "../Nav/Nav";
 import styles from "./MainLayout.module.css";
 
 export default function MainLayout({ children }): JSX.Element {
   return (
     <>
-      <header className={styles.header}>
-        Blogger [Next.js, GraphQL, Apollo Client, Hasura, MongoDB, Material UI]
-      </header>
+      <header className={styles.header}>Blogger</header>
       <div className={styles.container}>
-        <nav className={styles.nav}></nav>
+        <Nav />
         <main className={styles.main}>{children}</main>
-        <aside className={styles.aside}></aside>
+        <Aside />
       </div>
       <footer className={styles.footer}>
         <a

@@ -12,10 +12,7 @@ export default function MainLayout({ children }): JSX.Element {
         <Aside />
       </div>
       <footer className={styles.footer}>
-        <a
-          href="https://www.linkedin.com/in/pinakin-desai-601017277/"
-          target="_blank"
-        >
+        <a href="https://www.linkedin.com/in/pinakin-desai-601017277/" target="_blank">
           &copy; Pinakin Desai
         </a>
       </footer>

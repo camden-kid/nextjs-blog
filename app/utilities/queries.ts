@@ -2,9 +2,10 @@
 
 import { gql, DocumentNode } from "@apollo/client";
 
-const MY_QUERY: DocumentNode = gql`
-  query MyQuery {
-    posts {
+const GET_ALL_POSTS: DocumentNode = gql`
+  query GetAllPosts {
+    post {
+      _id
       text
       title
       user_id
@@ -12,4 +13,11 @@ const MY_QUERY: DocumentNode = gql`
   }
 `;
 
-export { MY_QUERY };
+const GET_POST: DocumentNode = gql`
+  query GetPost($id: objectId) {
+    post(where: { _id: { _eq: $id } }) {
+      text
+      title
+    }
+  }
+`;

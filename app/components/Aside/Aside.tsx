@@ -1,24 +1,32 @@
-import { getSortedPostsData } from "../../../lib/posts";
-import Link from "next/link";
-import Date from "../../../components/date";
+"use client"
+
 import styles from "./Aside.module.css";
+import List from "@mui/material/List";
+import { useRouter } from "next/navigation";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import { useGetAllPostsQuery } from "../../generated/graphql";
 
 export default function Aside(): JSX.Element {
-  const allPostsData = getSortedPostsData();
+  const { data } = useGetAllPostsQuery();
+  const router = useRouter();
+
+  const onListItemClick = (route: string) => {
+    router.push(route);
+  };
 
   return (
     <aside className={styles.aside}>
-      <ul className={styles.list}>
-        {allPostsData.map(({ id, date, title }) => (
-          <li className={styles.listItem} key={id}>
-            <Link href={`/posts/${id}`}>{title}</Link>
-            <br />
-            <small className={styles.lightText}>
-              <Date dateString={date} />
-            </small>
-          </li>
+      <List>
+        {data?.post.map(({ _id, title }) => (
+          <ListItem disablePadding key={_id.$oid}>
+            <ListItemButton onClick={() => onListItemClick(`/posts/${_id.$oid}`)}>
+              <ListItemText primary={title} />
+            </ListItemButton>
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </aside>
   );
 }

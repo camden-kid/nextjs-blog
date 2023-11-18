@@ -23,13 +23,8 @@ export default function Nav(): JSX.Element {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton onClick={() => onListItemClick("/")}>
+          <ListItemButton onClick={() => onListItemClick("/blog")}>
             <ListItemText primary="Blog" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton onClick={() => onListItemClick("/info")}>
-            <ListItemText primary="Info" />
           </ListItemButton>
         </ListItem>
       </List>

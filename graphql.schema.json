@@ -1115,8 +1115,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "posts",
-        "description": "columns and relationships of \"posts\"",
+        "name": "post",
+        "description": "columns and relationships of \"post\"",
         "fields": [
           {
             "name": "_id",
@@ -1190,8 +1190,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "posts_aggregate",
-        "description": "aggregated selection of \"posts\"",
+        "name": "post_aggregate",
+        "description": "aggregated selection of \"post\"",
         "fields": [
           {
             "name": "aggregate",
@@ -1199,7 +1199,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "posts_aggregate_fields",
+              "name": "post_aggregate_fields",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1220,7 +1220,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "OBJECT",
-                    "name": "posts",
+                    "name": "post",
                     "ofType": null
                   }
                 }
@@ -1237,8 +1237,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "posts_aggregate_fields",
-        "description": "aggregate fields of \"posts\"",
+        "name": "post_aggregate_fields",
+        "description": "aggregate fields of \"post\"",
         "fields": [
           {
             "name": "count",
@@ -1249,7 +1249,7 @@
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "posts_select_column",
+                  "name": "post_select_column",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -1289,8 +1289,8 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "posts_bool_exp",
-        "description": "Boolean expression to filter rows from the table \"posts\". All fields are combined with a logical 'AND'.",
+        "name": "post_bool_exp",
+        "description": "Boolean expression to filter rows from the table \"post\". All fields are combined with a logical 'AND'.",
         "fields": null,
         "inputFields": [
           {
@@ -1304,7 +1304,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "posts_bool_exp",
+                  "name": "post_bool_exp",
                   "ofType": null
                 }
               }
@@ -1330,7 +1330,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "posts_bool_exp",
+              "name": "post_bool_exp",
               "ofType": null
             },
             "defaultValue": null,
@@ -1348,7 +1348,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "posts_bool_exp",
+                  "name": "post_bool_exp",
                   "ofType": null
                 }
               }
@@ -1400,8 +1400,8 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "posts_order_by",
-        "description": "Ordering options when selecting data from \"posts\".",
+        "name": "post_order_by",
+        "description": "Ordering options when selecting data from \"post\".",
         "fields": null,
         "inputFields": [
           {
@@ -1459,8 +1459,8 @@
       },
       {
         "kind": "ENUM",
-        "name": "posts_select_column",
-        "description": "select columns of table \"posts\"",
+        "name": "post_select_column",
+        "description": "select columns of table \"post\"",
         "fields": null,
         "inputFields": null,
         "interfaces": null,
@@ -1498,8 +1498,8 @@
         "description": null,
         "fields": [
           {
-            "name": "posts",
-            "description": "fetch data from the table: \"posts\"",
+            "name": "post",
+            "description": "fetch data from the table: \"post\"",
             "args": [
               {
                 "name": "limit",
@@ -1536,7 +1536,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "posts_order_by",
+                      "name": "post_order_by",
                       "ofType": null
                     }
                   }
@@ -1550,7 +1550,7 @@
                 "description": "filter the rows returned",
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "posts_bool_exp",
+                  "name": "post_bool_exp",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -1569,7 +1569,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "OBJECT",
-                    "name": "posts",
+                    "name": "post",
                     "ofType": null
                   }
                 }
@@ -1579,8 +1579,8 @@
             "deprecationReason": null
           },
           {
-            "name": "posts_aggregate",
-            "description": "fetch aggregated fields from the table: \"posts\"",
+            "name": "post_aggregate",
+            "description": "fetch aggregated fields from the table: \"post\"",
             "args": [
               {
                 "name": "limit",
@@ -1617,7 +1617,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "posts_order_by",
+                      "name": "post_order_by",
                       "ofType": null
                     }
                   }
@@ -1631,7 +1631,7 @@
                 "description": "filter the rows returned",
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "posts_bool_exp",
+                  "name": "post_bool_exp",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -1644,7 +1644,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "posts_aggregate",
+                "name": "post_aggregate",
                 "ofType": null
               }
             },
@@ -1652,8 +1652,8 @@
             "deprecationReason": null
           },
           {
-            "name": "posts_by_pk",
-            "description": "fetch data from the table: \"posts\" using primary key columns",
+            "name": "post_by_pk",
+            "description": "fetch data from the table: \"post\" using primary key columns",
             "args": [
               {
                 "name": "_id",
@@ -1674,15 +1674,15 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "posts",
+              "name": "post",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "users",
-            "description": "fetch data from the table: \"users\"",
+            "name": "user",
+            "description": "fetch data from the table: \"user\"",
             "args": [
               {
                 "name": "limit",
@@ -1719,7 +1719,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "users_order_by",
+                      "name": "user_order_by",
                       "ofType": null
                     }
                   }
@@ -1733,7 +1733,7 @@
                 "description": "filter the rows returned",
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "users_bool_exp",
+                  "name": "user_bool_exp",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -1752,7 +1752,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "OBJECT",
-                    "name": "users",
+                    "name": "user",
                     "ofType": null
                   }
                 }
@@ -1762,8 +1762,8 @@
             "deprecationReason": null
           },
           {
-            "name": "users_aggregate",
-            "description": "fetch aggregated fields from the table: \"users\"",
+            "name": "user_aggregate",
+            "description": "fetch aggregated fields from the table: \"user\"",
             "args": [
               {
                 "name": "limit",
@@ -1800,7 +1800,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "users_order_by",
+                      "name": "user_order_by",
                       "ofType": null
                     }
                   }
@@ -1814,7 +1814,7 @@
                 "description": "filter the rows returned",
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "users_bool_exp",
+                  "name": "user_bool_exp",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -1827,7 +1827,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "users_aggregate",
+                "name": "user_aggregate",
                 "ofType": null
               }
             },
@@ -1835,8 +1835,8 @@
             "deprecationReason": null
           },
           {
-            "name": "users_by_pk",
-            "description": "fetch data from the table: \"users\" using primary key columns",
+            "name": "user_by_pk",
+            "description": "fetch data from the table: \"user\" using primary key columns",
             "args": [
               {
                 "name": "_id",
@@ -1857,7 +1857,7 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "users",
+              "name": "user",
               "ofType": null
             },
             "isDeprecated": false,
@@ -2020,8 +2020,8 @@
         "description": null,
         "fields": [
           {
-            "name": "posts",
-            "description": "fetch data from the table: \"posts\"",
+            "name": "post",
+            "description": "fetch data from the table: \"post\"",
             "args": [
               {
                 "name": "limit",
@@ -2058,7 +2058,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "posts_order_by",
+                      "name": "post_order_by",
                       "ofType": null
                     }
                   }
@@ -2072,7 +2072,7 @@
                 "description": "filter the rows returned",
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "posts_bool_exp",
+                  "name": "post_bool_exp",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -2091,7 +2091,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "OBJECT",
-                    "name": "posts",
+                    "name": "post",
                     "ofType": null
                   }
                 }
@@ -2101,8 +2101,8 @@
             "deprecationReason": null
           },
           {
-            "name": "posts_aggregate",
-            "description": "fetch aggregated fields from the table: \"posts\"",
+            "name": "post_aggregate",
+            "description": "fetch aggregated fields from the table: \"post\"",
             "args": [
               {
                 "name": "limit",
@@ -2139,7 +2139,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "posts_order_by",
+                      "name": "post_order_by",
                       "ofType": null
                     }
                   }
@@ -2153,7 +2153,7 @@
                 "description": "filter the rows returned",
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "posts_bool_exp",
+                  "name": "post_bool_exp",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -2166,7 +2166,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "posts_aggregate",
+                "name": "post_aggregate",
                 "ofType": null
               }
             },
@@ -2174,8 +2174,8 @@
             "deprecationReason": null
           },
           {
-            "name": "posts_by_pk",
-            "description": "fetch data from the table: \"posts\" using primary key columns",
+            "name": "post_by_pk",
+            "description": "fetch data from the table: \"post\" using primary key columns",
             "args": [
               {
                 "name": "_id",
@@ -2196,15 +2196,15 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "posts",
+              "name": "post",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "users",
-            "description": "fetch data from the table: \"users\"",
+            "name": "user",
+            "description": "fetch data from the table: \"user\"",
             "args": [
               {
                 "name": "limit",
@@ -2241,7 +2241,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "users_order_by",
+                      "name": "user_order_by",
                       "ofType": null
                     }
                   }
@@ -2255,7 +2255,7 @@
                 "description": "filter the rows returned",
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "users_bool_exp",
+                  "name": "user_bool_exp",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -2274,7 +2274,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "OBJECT",
-                    "name": "users",
+                    "name": "user",
                     "ofType": null
                   }
                 }
@@ -2284,8 +2284,8 @@
             "deprecationReason": null
           },
           {
-            "name": "users_aggregate",
-            "description": "fetch aggregated fields from the table: \"users\"",
+            "name": "user_aggregate",
+            "description": "fetch aggregated fields from the table: \"user\"",
             "args": [
               {
                 "name": "limit",
@@ -2322,7 +2322,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "users_order_by",
+                      "name": "user_order_by",
                       "ofType": null
                     }
                   }
@@ -2336,7 +2336,7 @@
                 "description": "filter the rows returned",
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "users_bool_exp",
+                  "name": "user_bool_exp",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -2349,7 +2349,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "users_aggregate",
+                "name": "user_aggregate",
                 "ofType": null
               }
             },
@@ -2357,8 +2357,8 @@
             "deprecationReason": null
           },
           {
-            "name": "users_by_pk",
-            "description": "fetch data from the table: \"users\" using primary key columns",
+            "name": "user_by_pk",
+            "description": "fetch data from the table: \"user\" using primary key columns",
             "args": [
               {
                 "name": "_id",
@@ -2379,7 +2379,7 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "users",
+              "name": "user",
               "ofType": null
             },
             "isDeprecated": false,
@@ -2393,8 +2393,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "users",
-        "description": "columns and relationships of \"users\"",
+        "name": "user",
+        "description": "columns and relationships of \"user\"",
         "fields": [
           {
             "name": "_id",
@@ -2436,8 +2436,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "users_aggregate",
-        "description": "aggregated selection of \"users\"",
+        "name": "user_aggregate",
+        "description": "aggregated selection of \"user\"",
         "fields": [
           {
             "name": "aggregate",
@@ -2445,7 +2445,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "users_aggregate_fields",
+              "name": "user_aggregate_fields",
               "ofType": null
             },
             "isDeprecated": false,
@@ -2466,7 +2466,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "OBJECT",
-                    "name": "users",
+                    "name": "user",
                     "ofType": null
                   }
                 }
@@ -2483,8 +2483,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "users_aggregate_fields",
-        "description": "aggregate fields of \"users\"",
+        "name": "user_aggregate_fields",
+        "description": "aggregate fields of \"user\"",
         "fields": [
           {
             "name": "count",
@@ -2495,7 +2495,7 @@
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "users_select_column",
+                  "name": "user_select_column",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -2535,8 +2535,8 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "users_bool_exp",
-        "description": "Boolean expression to filter rows from the table \"users\". All fields are combined with a logical 'AND'.",
+        "name": "user_bool_exp",
+        "description": "Boolean expression to filter rows from the table \"user\". All fields are combined with a logical 'AND'.",
         "fields": null,
         "inputFields": [
           {
@@ -2550,7 +2550,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "users_bool_exp",
+                  "name": "user_bool_exp",
                   "ofType": null
                 }
               }
@@ -2576,7 +2576,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "users_bool_exp",
+              "name": "user_bool_exp",
               "ofType": null
             },
             "defaultValue": null,
@@ -2594,7 +2594,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "users_bool_exp",
+                  "name": "user_bool_exp",
                   "ofType": null
                 }
               }
@@ -2622,8 +2622,8 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "users_order_by",
-        "description": "Ordering options when selecting data from \"users\".",
+        "name": "user_order_by",
+        "description": "Ordering options when selecting data from \"user\".",
         "fields": null,
         "inputFields": [
           {
@@ -2657,8 +2657,8 @@
       },
       {
         "kind": "ENUM",
-        "name": "users_select_column",
-        "description": "select columns of table \"users\"",
+        "name": "user_select_column",
+        "description": "select columns of table \"user\"",
         "fields": null,
         "inputFields": null,
         "interfaces": null,

@@ -40,56 +40,56 @@ export type ObjectId_Mongodb_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['objectId']['input']>>;
 };
 
-/** columns and relationships of "posts" */
-export type Posts = {
-  __typename?: 'posts';
+/** columns and relationships of "post" */
+export type Post = {
+  __typename?: 'post';
   _id: Scalars['objectId']['output'];
   text: Scalars['string']['output'];
   title: Scalars['string']['output'];
   user_id: Scalars['objectId']['output'];
 };
 
-/** aggregated selection of "posts" */
-export type Posts_Aggregate = {
-  __typename?: 'posts_aggregate';
-  aggregate?: Maybe<Posts_Aggregate_Fields>;
-  nodes: Array<Posts>;
+/** aggregated selection of "post" */
+export type Post_Aggregate = {
+  __typename?: 'post_aggregate';
+  aggregate?: Maybe<Post_Aggregate_Fields>;
+  nodes: Array<Post>;
 };
 
-/** aggregate fields of "posts" */
-export type Posts_Aggregate_Fields = {
-  __typename?: 'posts_aggregate_fields';
+/** aggregate fields of "post" */
+export type Post_Aggregate_Fields = {
+  __typename?: 'post_aggregate_fields';
   count: Scalars['Int']['output'];
 };
 
 
-/** aggregate fields of "posts" */
-export type Posts_Aggregate_FieldsCountArgs = {
-  column?: InputMaybe<Posts_Select_Column>;
+/** aggregate fields of "post" */
+export type Post_Aggregate_FieldsCountArgs = {
+  column?: InputMaybe<Post_Select_Column>;
   distinct?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-/** Boolean expression to filter rows from the table "posts". All fields are combined with a logical 'AND'. */
-export type Posts_Bool_Exp = {
-  _and?: InputMaybe<Array<Posts_Bool_Exp>>;
+/** Boolean expression to filter rows from the table "post". All fields are combined with a logical 'AND'. */
+export type Post_Bool_Exp = {
+  _and?: InputMaybe<Array<Post_Bool_Exp>>;
   _id?: InputMaybe<ObjectId_Mongodb_Comparison_Exp>;
-  _not?: InputMaybe<Posts_Bool_Exp>;
-  _or?: InputMaybe<Array<Posts_Bool_Exp>>;
+  _not?: InputMaybe<Post_Bool_Exp>;
+  _or?: InputMaybe<Array<Post_Bool_Exp>>;
   text?: InputMaybe<String_Mongodb_Comparison_Exp>;
   title?: InputMaybe<String_Mongodb_Comparison_Exp>;
   user_id?: InputMaybe<ObjectId_Mongodb_Comparison_Exp>;
 };
 
-/** Ordering options when selecting data from "posts". */
-export type Posts_Order_By = {
+/** Ordering options when selecting data from "post". */
+export type Post_Order_By = {
   _id?: InputMaybe<Mongodb_Order_By>;
   text?: InputMaybe<Mongodb_Order_By>;
   title?: InputMaybe<Mongodb_Order_By>;
   user_id?: InputMaybe<Mongodb_Order_By>;
 };
 
-/** select columns of table "posts" */
-export enum Posts_Select_Column {
+/** select columns of table "post" */
+export enum Post_Select_Column {
   /** column name */
   Id = '_id',
   /** column name */
@@ -102,59 +102,59 @@ export enum Posts_Select_Column {
 
 export type Query_Root = {
   __typename?: 'query_root';
-  /** fetch data from the table: "posts" */
-  posts: Array<Posts>;
-  /** fetch aggregated fields from the table: "posts" */
-  posts_aggregate: Posts_Aggregate;
-  /** fetch data from the table: "posts" using primary key columns */
-  posts_by_pk?: Maybe<Posts>;
-  /** fetch data from the table: "users" */
-  users: Array<Users>;
-  /** fetch aggregated fields from the table: "users" */
-  users_aggregate: Users_Aggregate;
-  /** fetch data from the table: "users" using primary key columns */
-  users_by_pk?: Maybe<Users>;
+  /** fetch data from the table: "post" */
+  post: Array<Post>;
+  /** fetch aggregated fields from the table: "post" */
+  post_aggregate: Post_Aggregate;
+  /** fetch data from the table: "post" using primary key columns */
+  post_by_pk?: Maybe<Post>;
+  /** fetch data from the table: "user" */
+  user: Array<User>;
+  /** fetch aggregated fields from the table: "user" */
+  user_aggregate: User_Aggregate;
+  /** fetch data from the table: "user" using primary key columns */
+  user_by_pk?: Maybe<User>;
 };
 
 
-export type Query_RootPostsArgs = {
+export type Query_RootPostArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Posts_Order_By>>;
-  where?: InputMaybe<Posts_Bool_Exp>;
+  order_by?: InputMaybe<Array<Post_Order_By>>;
+  where?: InputMaybe<Post_Bool_Exp>;
 };
 
 
-export type Query_RootPosts_AggregateArgs = {
+export type Query_RootPost_AggregateArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Posts_Order_By>>;
-  where?: InputMaybe<Posts_Bool_Exp>;
+  order_by?: InputMaybe<Array<Post_Order_By>>;
+  where?: InputMaybe<Post_Bool_Exp>;
 };
 
 
-export type Query_RootPosts_By_PkArgs = {
+export type Query_RootPost_By_PkArgs = {
   _id: Scalars['objectId']['input'];
 };
 
 
-export type Query_RootUsersArgs = {
+export type Query_RootUserArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Users_Order_By>>;
-  where?: InputMaybe<Users_Bool_Exp>;
+  order_by?: InputMaybe<Array<User_Order_By>>;
+  where?: InputMaybe<User_Bool_Exp>;
 };
 
 
-export type Query_RootUsers_AggregateArgs = {
+export type Query_RootUser_AggregateArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Users_Order_By>>;
-  where?: InputMaybe<Users_Bool_Exp>;
+  order_by?: InputMaybe<Array<User_Order_By>>;
+  where?: InputMaybe<User_Bool_Exp>;
 };
 
 
-export type Query_RootUsers_By_PkArgs = {
+export type Query_RootUser_By_PkArgs = {
   _id: Scalars['objectId']['input'];
 };
 
@@ -173,121 +173,129 @@ export type String_Mongodb_Comparison_Exp = {
 
 export type Subscription_Root = {
   __typename?: 'subscription_root';
-  /** fetch data from the table: "posts" */
-  posts: Array<Posts>;
-  /** fetch aggregated fields from the table: "posts" */
-  posts_aggregate: Posts_Aggregate;
-  /** fetch data from the table: "posts" using primary key columns */
-  posts_by_pk?: Maybe<Posts>;
-  /** fetch data from the table: "users" */
-  users: Array<Users>;
-  /** fetch aggregated fields from the table: "users" */
-  users_aggregate: Users_Aggregate;
-  /** fetch data from the table: "users" using primary key columns */
-  users_by_pk?: Maybe<Users>;
+  /** fetch data from the table: "post" */
+  post: Array<Post>;
+  /** fetch aggregated fields from the table: "post" */
+  post_aggregate: Post_Aggregate;
+  /** fetch data from the table: "post" using primary key columns */
+  post_by_pk?: Maybe<Post>;
+  /** fetch data from the table: "user" */
+  user: Array<User>;
+  /** fetch aggregated fields from the table: "user" */
+  user_aggregate: User_Aggregate;
+  /** fetch data from the table: "user" using primary key columns */
+  user_by_pk?: Maybe<User>;
 };
 
 
-export type Subscription_RootPostsArgs = {
+export type Subscription_RootPostArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Posts_Order_By>>;
-  where?: InputMaybe<Posts_Bool_Exp>;
+  order_by?: InputMaybe<Array<Post_Order_By>>;
+  where?: InputMaybe<Post_Bool_Exp>;
 };
 
 
-export type Subscription_RootPosts_AggregateArgs = {
+export type Subscription_RootPost_AggregateArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Posts_Order_By>>;
-  where?: InputMaybe<Posts_Bool_Exp>;
+  order_by?: InputMaybe<Array<Post_Order_By>>;
+  where?: InputMaybe<Post_Bool_Exp>;
 };
 
 
-export type Subscription_RootPosts_By_PkArgs = {
+export type Subscription_RootPost_By_PkArgs = {
   _id: Scalars['objectId']['input'];
 };
 
 
-export type Subscription_RootUsersArgs = {
+export type Subscription_RootUserArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Users_Order_By>>;
-  where?: InputMaybe<Users_Bool_Exp>;
+  order_by?: InputMaybe<Array<User_Order_By>>;
+  where?: InputMaybe<User_Bool_Exp>;
 };
 
 
-export type Subscription_RootUsers_AggregateArgs = {
+export type Subscription_RootUser_AggregateArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Users_Order_By>>;
-  where?: InputMaybe<Users_Bool_Exp>;
+  order_by?: InputMaybe<Array<User_Order_By>>;
+  where?: InputMaybe<User_Bool_Exp>;
 };
 
 
-export type Subscription_RootUsers_By_PkArgs = {
+export type Subscription_RootUser_By_PkArgs = {
   _id: Scalars['objectId']['input'];
 };
 
-/** columns and relationships of "users" */
-export type Users = {
-  __typename?: 'users';
+/** columns and relationships of "user" */
+export type User = {
+  __typename?: 'user';
   _id: Scalars['objectId']['output'];
   name: Scalars['string']['output'];
 };
 
-/** aggregated selection of "users" */
-export type Users_Aggregate = {
-  __typename?: 'users_aggregate';
-  aggregate?: Maybe<Users_Aggregate_Fields>;
-  nodes: Array<Users>;
+/** aggregated selection of "user" */
+export type User_Aggregate = {
+  __typename?: 'user_aggregate';
+  aggregate?: Maybe<User_Aggregate_Fields>;
+  nodes: Array<User>;
 };
 
-/** aggregate fields of "users" */
-export type Users_Aggregate_Fields = {
-  __typename?: 'users_aggregate_fields';
+/** aggregate fields of "user" */
+export type User_Aggregate_Fields = {
+  __typename?: 'user_aggregate_fields';
   count: Scalars['Int']['output'];
 };
 
 
-/** aggregate fields of "users" */
-export type Users_Aggregate_FieldsCountArgs = {
-  column?: InputMaybe<Users_Select_Column>;
+/** aggregate fields of "user" */
+export type User_Aggregate_FieldsCountArgs = {
+  column?: InputMaybe<User_Select_Column>;
   distinct?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-/** Boolean expression to filter rows from the table "users". All fields are combined with a logical 'AND'. */
-export type Users_Bool_Exp = {
-  _and?: InputMaybe<Array<Users_Bool_Exp>>;
+/** Boolean expression to filter rows from the table "user". All fields are combined with a logical 'AND'. */
+export type User_Bool_Exp = {
+  _and?: InputMaybe<Array<User_Bool_Exp>>;
   _id?: InputMaybe<ObjectId_Mongodb_Comparison_Exp>;
-  _not?: InputMaybe<Users_Bool_Exp>;
-  _or?: InputMaybe<Array<Users_Bool_Exp>>;
+  _not?: InputMaybe<User_Bool_Exp>;
+  _or?: InputMaybe<Array<User_Bool_Exp>>;
   name?: InputMaybe<String_Mongodb_Comparison_Exp>;
 };
 
-/** Ordering options when selecting data from "users". */
-export type Users_Order_By = {
+/** Ordering options when selecting data from "user". */
+export type User_Order_By = {
   _id?: InputMaybe<Mongodb_Order_By>;
   name?: InputMaybe<Mongodb_Order_By>;
 };
 
-/** select columns of table "users" */
-export enum Users_Select_Column {
+/** select columns of table "user" */
+export enum User_Select_Column {
   /** column name */
   Id = '_id',
   /** column name */
   Name = 'name'
 }
 
-export type MyQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetAllPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MyQueryQuery = { __typename?: 'query_root', posts: Array<{ __typename?: 'posts', text: any, title: any, user_id: any }> };
+export type GetAllPostsQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', _id: any, text: any, title: any, user_id: any }> };
+
+export type GetPostQueryVariables = Exact<{
+  id?: InputMaybe<Scalars['objectId']['input']>;
+}>;
 
 
-export const MyQueryDocument = gql`
-    query MyQuery {
-  posts {
+export type GetPostQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', text: any, title: any }> };
+
+
+export const GetAllPostsDocument = gql`
+    query GetAllPosts {
+  post {
+    _id
     text
     title
     user_id
@@ -296,33 +304,74 @@ export const MyQueryDocument = gql`
     `;
 
 /**
- * __useMyQueryQuery__
+ * __useGetAllPostsQuery__
  *
- * To run a query within a React component, call `useMyQueryQuery` and pass it any options that fit your needs.
- * When your component renders, `useMyQueryQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetAllPostsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAllPostsQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useMyQueryQuery({
+ * const { data, loading, error } = useGetAllPostsQuery({
  *   variables: {
  *   },
  * });
  */
-export function useMyQueryQuery(baseOptions?: Apollo.QueryHookOptions<MyQueryQuery, MyQueryQueryVariables>) {
+export function useGetAllPostsQuery(baseOptions?: Apollo.QueryHookOptions<GetAllPostsQuery, GetAllPostsQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<MyQueryQuery, MyQueryQueryVariables>(MyQueryDocument, options);
+        return Apollo.useQuery<GetAllPostsQuery, GetAllPostsQueryVariables>(GetAllPostsDocument, options);
       }
-export function useMyQueryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MyQueryQuery, MyQueryQueryVariables>) {
+export function useGetAllPostsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAllPostsQuery, GetAllPostsQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<MyQueryQuery, MyQueryQueryVariables>(MyQueryDocument, options);
+          return Apollo.useLazyQuery<GetAllPostsQuery, GetAllPostsQueryVariables>(GetAllPostsDocument, options);
         }
-export function useMyQuerySuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<MyQueryQuery, MyQueryQueryVariables>) {
+export function useGetAllPostsSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<GetAllPostsQuery, GetAllPostsQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<MyQueryQuery, MyQueryQueryVariables>(MyQueryDocument, options);
+          return Apollo.useSuspenseQuery<GetAllPostsQuery, GetAllPostsQueryVariables>(GetAllPostsDocument, options);
         }
-export type MyQueryQueryHookResult = ReturnType<typeof useMyQueryQuery>;
-export type MyQueryLazyQueryHookResult = ReturnType<typeof useMyQueryLazyQuery>;
-export type MyQuerySuspenseQueryHookResult = ReturnType<typeof useMyQuerySuspenseQuery>;
-export type MyQueryQueryResult = Apollo.QueryResult<MyQueryQuery, MyQueryQueryVariables>;
+export type GetAllPostsQueryHookResult = ReturnType<typeof useGetAllPostsQuery>;
+export type GetAllPostsLazyQueryHookResult = ReturnType<typeof useGetAllPostsLazyQuery>;
+export type GetAllPostsSuspenseQueryHookResult = ReturnType<typeof useGetAllPostsSuspenseQuery>;
+export type GetAllPostsQueryResult = Apollo.QueryResult<GetAllPostsQuery, GetAllPostsQueryVariables>;
+export const GetPostDocument = gql`
+    query GetPost($id: objectId) {
+  post(where: {_id: {_eq: $id}}) {
+    text
+    title
+  }
+}
+    `;
+
+/**
+ * __useGetPostQuery__
+ *
+ * To run a query within a React component, call `useGetPostQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetPostQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetPostQuery({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useGetPostQuery(baseOptions?: Apollo.QueryHookOptions<GetPostQuery, GetPostQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetPostQuery, GetPostQueryVariables>(GetPostDocument, options);
+      }
+export function useGetPostLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPostQuery, GetPostQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetPostQuery, GetPostQueryVariables>(GetPostDocument, options);
+        }
+export function useGetPostSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<GetPostQuery, GetPostQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetPostQuery, GetPostQueryVariables>(GetPostDocument, options);
+        }
+export type GetPostQueryHookResult = ReturnType<typeof useGetPostQuery>;
+export type GetPostLazyQueryHookResult = ReturnType<typeof useGetPostLazyQuery>;
+export type GetPostSuspenseQueryHookResult = ReturnType<typeof useGetPostSuspenseQuery>;
+export type GetPostQueryResult = Apollo.QueryResult<GetPostQuery, GetPostQueryVariables>;

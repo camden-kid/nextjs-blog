@@ -1,22 +1,15 @@
-import { getAllPostIds, getPostData } from "../../../lib/posts";
-import Date from "../../../components/date";
-import styles from "./page.module.css";
+"use client";
 
-export const dynamicParams = true;
+import { useParams } from "next/navigation";
+import { useGetPostQuery } from "../../generated/graphql";
 
-export async function generateStaticParams() {
-  return getAllPostIds();
-}
+export default function Post() {
+  const params = useParams();
+  const { data } = useGetPostQuery({
+    variables: {
+      id: { $oid: params.id },
+    },
+  });
 
-export default async function Post({ params }) {
-  const postData = await getPostData(params.id);
-
-  return (
-    <article>
-      <div className={styles.lightText}>
-        <Date dateString={postData.date} />
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-    </article>
-  );
+  return <article>{data?.post[0]?.title}</article>;
 }

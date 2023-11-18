@@ -1,11 +1,9 @@
 "use client";
 
-import { useQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import { MY_QUERY } from "../utilities/queries";
-import { useMyQueryQuery } from "../generated/graphql";
+import { useAllPostsQuery } from "../generated/graphql";
 
 export default function QueryResponse(): JSX.Element {
-  const { data, loading } = useMyQueryQuery();
+  const { data, loading } = useAllPostsQuery();
 
   if (loading) {
     return <div>Loading...</div>;

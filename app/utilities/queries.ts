@@ -9,6 +9,7 @@ const GET_ALL_POSTS: DocumentNode = gql`
       text
       title
       user_id
+      created
     }
   }
 `;

@@ -15,8 +15,22 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
   Float: { input: number; output: number; }
+  date: { input: any; output: any; }
   objectId: { input: any; output: any; }
   string: { input: any; output: any; }
+};
+
+/** Boolean expression to compare columns of type "date". All fields are combined with logical 'AND'. */
+export type Date_Mongodb_Comparison_Exp = {
+  _eq?: InputMaybe<Scalars['date']['input']>;
+  _gt?: InputMaybe<Scalars['date']['input']>;
+  _gte?: InputMaybe<Scalars['date']['input']>;
+  _in?: InputMaybe<Array<Scalars['date']['input']>>;
+  _is_null?: InputMaybe<Scalars['Boolean']['input']>;
+  _lt?: InputMaybe<Scalars['date']['input']>;
+  _lte?: InputMaybe<Scalars['date']['input']>;
+  _neq?: InputMaybe<Scalars['date']['input']>;
+  _nin?: InputMaybe<Array<Scalars['date']['input']>>;
 };
 
 /** column ordering options */
@@ -44,6 +58,7 @@ export type ObjectId_Mongodb_Comparison_Exp = {
 export type Post = {
   __typename?: 'post';
   _id: Scalars['objectId']['output'];
+  created: Scalars['date']['output'];
   text: Scalars['string']['output'];
   title: Scalars['string']['output'];
   user_id: Scalars['objectId']['output'];
@@ -75,6 +90,7 @@ export type Post_Bool_Exp = {
   _id?: InputMaybe<ObjectId_Mongodb_Comparison_Exp>;
   _not?: InputMaybe<Post_Bool_Exp>;
   _or?: InputMaybe<Array<Post_Bool_Exp>>;
+  created?: InputMaybe<Date_Mongodb_Comparison_Exp>;
   text?: InputMaybe<String_Mongodb_Comparison_Exp>;
   title?: InputMaybe<String_Mongodb_Comparison_Exp>;
   user_id?: InputMaybe<ObjectId_Mongodb_Comparison_Exp>;
@@ -83,6 +99,7 @@ export type Post_Bool_Exp = {
 /** Ordering options when selecting data from "post". */
 export type Post_Order_By = {
   _id?: InputMaybe<Mongodb_Order_By>;
+  created?: InputMaybe<Mongodb_Order_By>;
   text?: InputMaybe<Mongodb_Order_By>;
   title?: InputMaybe<Mongodb_Order_By>;
   user_id?: InputMaybe<Mongodb_Order_By>;
@@ -92,6 +109,8 @@ export type Post_Order_By = {
 export enum Post_Select_Column {
   /** column name */
   Id = '_id',
+  /** column name */
+  Created = 'created',
   /** column name */
   Text = 'text',
   /** column name */
@@ -282,7 +301,7 @@ export enum User_Select_Column {
 export type GetAllPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllPostsQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', _id: any, text: any, title: any, user_id: any }> };
+export type GetAllPostsQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', _id: any, text: any, title: any, user_id: any, created: any }> };
 
 export type GetPostQueryVariables = Exact<{
   id?: InputMaybe<Scalars['objectId']['input']>;
@@ -299,6 +318,7 @@ export const GetAllPostsDocument = gql`
     text
     title
     user_id
+    created
   }
 }
     `;

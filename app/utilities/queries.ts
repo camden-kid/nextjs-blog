@@ -1,8 +1,8 @@
 // inside /app/utilities/queries.ts
 
-import { gql, DocumentNode } from "@apollo/client";
+import { gql } from "@apollo/client";
 
-const GET_ALL_POSTS: DocumentNode = gql`
+gql`
   query GetAllPosts {
     post {
       id
@@ -14,11 +14,19 @@ const GET_ALL_POSTS: DocumentNode = gql`
   }
 `;
 
-const GET_POST: DocumentNode = gql`
+gql`
   query GetPost($id: Int) {
     post(where: { id: { _eq: $id } }) {
       text
       title
+    }
+  }
+`;
+
+gql`
+  mutation AddPost($created: Int, $text: String, $title: String, $user_id: Int) {
+    insert_post_one(object: { created: $created, text: $text, title: $title, user_id: $user_id }) {
+      id
     }
   }
 `;

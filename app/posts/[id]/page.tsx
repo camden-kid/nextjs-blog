@@ -9,5 +9,5 @@ export default function Post({ params }) {
     },
   });
 
-  return <article>{data?.post[0]?.title}</article>;
+  return <article>{data?.post[0]?.text}</article>;
 }

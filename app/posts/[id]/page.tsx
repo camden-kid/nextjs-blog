@@ -1,13 +1,11 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import { useGetPostQuery } from "../../generated/graphql";
 
-export default function Post() {
-  const params = useParams();
+export default function Post({ params }) {
   const { data } = useGetPostQuery({
     variables: {
-      id: { $oid: params.id },
+      id: parseInt(params.id),
     },
   });
 

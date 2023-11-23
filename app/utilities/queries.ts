@@ -5,7 +5,7 @@ import { gql, DocumentNode } from "@apollo/client";
 const GET_ALL_POSTS: DocumentNode = gql`
   query GetAllPosts {
     post {
-      _id
+      id
       text
       title
       user_id
@@ -15,8 +15,8 @@ const GET_ALL_POSTS: DocumentNode = gql`
 `;
 
 const GET_POST: DocumentNode = gql`
-  query GetPost($id: objectId) {
-    post(where: { _id: { _eq: $id } }) {
+  query GetPost($id: Int) {
+    post(where: { id: { _eq: $id } }) {
       text
       title
     }

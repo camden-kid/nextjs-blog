@@ -13,7 +13,7 @@ export default function Aside(): JSX.Element {
   const { data } = useGetAllPostsQuery();
   const router = useRouter();
 
-  const onListItemClick = (id: string) => {
+  const onListItemClick = (id: number) => {
     router.push(`/posts/${id}`);
   };
 
@@ -21,9 +21,9 @@ export default function Aside(): JSX.Element {
     <aside className={styles.aside}>
       <List>
         <ListSubheader sx={{bgcolor: "#b2d6fd"}}>Recent posts</ListSubheader>
-        {data?.post.map(({ _id, title, created }) => (
-          <ListItem disablePadding key={_id.$oid}>
-            <ListItemButton onClick={() => onListItemClick(_id.$oid)}>
+        {data?.post.map(({ id, title, created }) => (
+          <ListItem disablePadding key={id}>
+            <ListItemButton onClick={() => onListItemClick(id)}>
               <ListItemText primary={title} secondary={new Date(created).toLocaleDateString()} />
             </ListItemButton>
           </ListItem>

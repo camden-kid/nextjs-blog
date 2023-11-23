@@ -15,53 +15,185 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
   Float: { input: number; output: number; }
-  date: { input: any; output: any; }
-  objectId: { input: any; output: any; }
-  string: { input: any; output: any; }
+  datetime: { input: any; output: any; }
 };
 
-/** Boolean expression to compare columns of type "date". All fields are combined with logical 'AND'. */
-export type Date_Mongodb_Comparison_Exp = {
-  _eq?: InputMaybe<Scalars['date']['input']>;
-  _gt?: InputMaybe<Scalars['date']['input']>;
-  _gte?: InputMaybe<Scalars['date']['input']>;
-  _in?: InputMaybe<Array<Scalars['date']['input']>>;
+/** Boolean expression to compare columns of type "Int". All fields are combined with logical 'AND'. */
+export type Int_Mysql8_Comparison_Exp = {
+  _eq?: InputMaybe<Scalars['Int']['input']>;
+  _gt?: InputMaybe<Scalars['Int']['input']>;
+  _gte?: InputMaybe<Scalars['Int']['input']>;
+  _in?: InputMaybe<Array<Scalars['Int']['input']>>;
   _is_null?: InputMaybe<Scalars['Boolean']['input']>;
-  _lt?: InputMaybe<Scalars['date']['input']>;
-  _lte?: InputMaybe<Scalars['date']['input']>;
-  _neq?: InputMaybe<Scalars['date']['input']>;
-  _nin?: InputMaybe<Array<Scalars['date']['input']>>;
+  _lt?: InputMaybe<Scalars['Int']['input']>;
+  _lte?: InputMaybe<Scalars['Int']['input']>;
+  _neq?: InputMaybe<Scalars['Int']['input']>;
+  _nin?: InputMaybe<Array<Scalars['Int']['input']>>;
+};
+
+/** Boolean expression to compare columns of type "String". All fields are combined with logical 'AND'. */
+export type String_Mysql8_Comparison_Exp = {
+  _eq?: InputMaybe<Scalars['String']['input']>;
+  _gt?: InputMaybe<Scalars['String']['input']>;
+  _gte?: InputMaybe<Scalars['String']['input']>;
+  _in?: InputMaybe<Array<Scalars['String']['input']>>;
+  _is_null?: InputMaybe<Scalars['Boolean']['input']>;
+  _lt?: InputMaybe<Scalars['String']['input']>;
+  _lte?: InputMaybe<Scalars['String']['input']>;
+  _neq?: InputMaybe<Scalars['String']['input']>;
+  _nin?: InputMaybe<Array<Scalars['String']['input']>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Boolean expression to compare columns of type "datetime". All fields are combined with logical 'AND'. */
+export type Datetime_Mysql8_Comparison_Exp = {
+  _eq?: InputMaybe<Scalars['datetime']['input']>;
+  _gt?: InputMaybe<Scalars['datetime']['input']>;
+  _gte?: InputMaybe<Scalars['datetime']['input']>;
+  _in?: InputMaybe<Array<Scalars['datetime']['input']>>;
+  _is_null?: InputMaybe<Scalars['Boolean']['input']>;
+  _lt?: InputMaybe<Scalars['datetime']['input']>;
+  _lte?: InputMaybe<Scalars['datetime']['input']>;
+  _neq?: InputMaybe<Scalars['datetime']['input']>;
+  _nin?: InputMaybe<Array<Scalars['datetime']['input']>>;
+};
+
+/** mutation root */
+export type Mutation_Root = {
+  __typename?: 'mutation_root';
+  /** delete data from the table: "post" */
+  delete_post?: Maybe<Post_Mutation_Response>;
+  /** delete single row from the table: "post" */
+  delete_post_by_pk?: Maybe<Post>;
+  /** delete data from the table: "user" */
+  delete_user?: Maybe<User_Mutation_Response>;
+  /** delete single row from the table: "user" */
+  delete_user_by_pk?: Maybe<User>;
+  /** insert data into the table: "post" */
+  insert_post?: Maybe<Post_Mutation_Response>;
+  /** insert a single row into the table: "post" */
+  insert_post_one?: Maybe<Post>;
+  /** insert data into the table: "user" */
+  insert_user?: Maybe<User_Mutation_Response>;
+  /** insert a single row into the table: "user" */
+  insert_user_one?: Maybe<User>;
+  /** update data of the table: "post" */
+  update_post?: Maybe<Post_Mutation_Response>;
+  /** update single row of the table: "post" */
+  update_post_by_pk?: Maybe<Post>;
+  /** update multiples rows of table: "post" */
+  update_post_many?: Maybe<Array<Maybe<Post_Mutation_Response>>>;
+  /** update data of the table: "user" */
+  update_user?: Maybe<User_Mutation_Response>;
+  /** update single row of the table: "user" */
+  update_user_by_pk?: Maybe<User>;
+  /** update multiples rows of table: "user" */
+  update_user_many?: Maybe<Array<Maybe<User_Mutation_Response>>>;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_PostArgs = {
+  where: Post_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Post_By_PkArgs = {
+  id: Scalars['Int']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_UserArgs = {
+  where: User_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_User_By_PkArgs = {
+  id: Scalars['Int']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_PostArgs = {
+  objects: Array<Post_Insert_Input>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Post_OneArgs = {
+  object: Post_Insert_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_UserArgs = {
+  objects: Array<User_Insert_Input>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_User_OneArgs = {
+  object: User_Insert_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_PostArgs = {
+  _set?: InputMaybe<Post_Set_Input>;
+  where: Post_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Post_By_PkArgs = {
+  _set?: InputMaybe<Post_Set_Input>;
+  pk_columns: Post_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Post_ManyArgs = {
+  updates: Array<Post_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_UserArgs = {
+  _set?: InputMaybe<User_Set_Input>;
+  where: User_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_User_By_PkArgs = {
+  _set?: InputMaybe<User_Set_Input>;
+  pk_columns: User_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_User_ManyArgs = {
+  updates: Array<User_Updates>;
 };
 
 /** column ordering options */
-export enum Mongodb_Order_By {
+export enum Mysql8_Order_By {
   /** in ascending order */
   Asc = 'asc',
   /** in descending order */
   Desc = 'desc'
 }
 
-/** Boolean expression to compare columns of type "objectId". All fields are combined with logical 'AND'. */
-export type ObjectId_Mongodb_Comparison_Exp = {
-  _eq?: InputMaybe<Scalars['objectId']['input']>;
-  _gt?: InputMaybe<Scalars['objectId']['input']>;
-  _gte?: InputMaybe<Scalars['objectId']['input']>;
-  _in?: InputMaybe<Array<Scalars['objectId']['input']>>;
-  _is_null?: InputMaybe<Scalars['Boolean']['input']>;
-  _lt?: InputMaybe<Scalars['objectId']['input']>;
-  _lte?: InputMaybe<Scalars['objectId']['input']>;
-  _neq?: InputMaybe<Scalars['objectId']['input']>;
-  _nin?: InputMaybe<Array<Scalars['objectId']['input']>>;
-};
-
-/** columns and relationships of "post" */
 export type Post = {
   __typename?: 'post';
-  _id: Scalars['objectId']['output'];
-  created: Scalars['date']['output'];
-  text: Scalars['string']['output'];
-  title: Scalars['string']['output'];
-  user_id: Scalars['objectId']['output'];
+  created: Scalars['datetime']['output'];
+  id: Scalars['Int']['output'];
+  text: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  user_id: Scalars['Int']['output'];
 };
 
 /** aggregated selection of "post" */
@@ -74,7 +206,15 @@ export type Post_Aggregate = {
 /** aggregate fields of "post" */
 export type Post_Aggregate_Fields = {
   __typename?: 'post_aggregate_fields';
+  avg?: Maybe<Post_Avg_Fields>;
   count: Scalars['Int']['output'];
+  max?: Maybe<Post_Max_Fields>;
+  min?: Maybe<Post_Min_Fields>;
+  stddev_pop?: Maybe<Post_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Post_Stddev_Samp_Fields>;
+  sum?: Maybe<Post_Sum_Fields>;
+  var_pop?: Maybe<Post_Var_Pop_Fields>;
+  var_samp?: Maybe<Post_Var_Samp_Fields>;
 };
 
 
@@ -84,33 +224,81 @@ export type Post_Aggregate_FieldsCountArgs = {
   distinct?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+/** aggregate avg on columns */
+export type Post_Avg_Fields = {
+  __typename?: 'post_avg_fields';
+  id?: Maybe<Scalars['Float']['output']>;
+  user_id?: Maybe<Scalars['Float']['output']>;
+};
+
 /** Boolean expression to filter rows from the table "post". All fields are combined with a logical 'AND'. */
 export type Post_Bool_Exp = {
   _and?: InputMaybe<Array<Post_Bool_Exp>>;
-  _id?: InputMaybe<ObjectId_Mongodb_Comparison_Exp>;
   _not?: InputMaybe<Post_Bool_Exp>;
   _or?: InputMaybe<Array<Post_Bool_Exp>>;
-  created?: InputMaybe<Date_Mongodb_Comparison_Exp>;
-  text?: InputMaybe<String_Mongodb_Comparison_Exp>;
-  title?: InputMaybe<String_Mongodb_Comparison_Exp>;
-  user_id?: InputMaybe<ObjectId_Mongodb_Comparison_Exp>;
+  created?: InputMaybe<Datetime_Mysql8_Comparison_Exp>;
+  id?: InputMaybe<Int_Mysql8_Comparison_Exp>;
+  text?: InputMaybe<String_Mysql8_Comparison_Exp>;
+  title?: InputMaybe<String_Mysql8_Comparison_Exp>;
+  user_id?: InputMaybe<Int_Mysql8_Comparison_Exp>;
+};
+
+/** input type for inserting data into table "post" */
+export type Post_Insert_Input = {
+  created?: InputMaybe<Scalars['datetime']['input']>;
+  id?: InputMaybe<Scalars['Int']['input']>;
+  text?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  user_id?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** aggregate max on columns */
+export type Post_Max_Fields = {
+  __typename?: 'post_max_fields';
+  id?: Maybe<Scalars['Int']['output']>;
+  text?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  user_id?: Maybe<Scalars['Int']['output']>;
+};
+
+/** aggregate min on columns */
+export type Post_Min_Fields = {
+  __typename?: 'post_min_fields';
+  id?: Maybe<Scalars['Int']['output']>;
+  text?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  user_id?: Maybe<Scalars['Int']['output']>;
+};
+
+/** response of any mutation on the table "post" */
+export type Post_Mutation_Response = {
+  __typename?: 'post_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Post>;
 };
 
 /** Ordering options when selecting data from "post". */
 export type Post_Order_By = {
-  _id?: InputMaybe<Mongodb_Order_By>;
-  created?: InputMaybe<Mongodb_Order_By>;
-  text?: InputMaybe<Mongodb_Order_By>;
-  title?: InputMaybe<Mongodb_Order_By>;
-  user_id?: InputMaybe<Mongodb_Order_By>;
+  created?: InputMaybe<Mysql8_Order_By>;
+  id?: InputMaybe<Mysql8_Order_By>;
+  text?: InputMaybe<Mysql8_Order_By>;
+  title?: InputMaybe<Mysql8_Order_By>;
+  user_id?: InputMaybe<Mysql8_Order_By>;
+};
+
+/** primary key columns input for table: post */
+export type Post_Pk_Columns_Input = {
+  id: Scalars['Int']['input'];
 };
 
 /** select columns of table "post" */
 export enum Post_Select_Column {
   /** column name */
-  Id = '_id',
-  /** column name */
   Created = 'created',
+  /** column name */
+  Id = 'id',
   /** column name */
   Text = 'text',
   /** column name */
@@ -118,6 +306,57 @@ export enum Post_Select_Column {
   /** column name */
   UserId = 'user_id'
 }
+
+/** input type for updating data in table "post" */
+export type Post_Set_Input = {
+  created?: InputMaybe<Scalars['datetime']['input']>;
+  id?: InputMaybe<Scalars['Int']['input']>;
+  text?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  user_id?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Post_Stddev_Pop_Fields = {
+  __typename?: 'post_stddev_pop_fields';
+  id?: Maybe<Scalars['Float']['output']>;
+  user_id?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Post_Stddev_Samp_Fields = {
+  __typename?: 'post_stddev_samp_fields';
+  id?: Maybe<Scalars['Float']['output']>;
+  user_id?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate sum on columns */
+export type Post_Sum_Fields = {
+  __typename?: 'post_sum_fields';
+  id?: Maybe<Scalars['Int']['output']>;
+  user_id?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Post_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Post_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Post_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Post_Var_Pop_Fields = {
+  __typename?: 'post_var_pop_fields';
+  id?: Maybe<Scalars['Float']['output']>;
+  user_id?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate var_samp on columns */
+export type Post_Var_Samp_Fields = {
+  __typename?: 'post_var_samp_fields';
+  id?: Maybe<Scalars['Float']['output']>;
+  user_id?: Maybe<Scalars['Float']['output']>;
+};
 
 export type Query_Root = {
   __typename?: 'query_root';
@@ -153,7 +392,7 @@ export type Query_RootPost_AggregateArgs = {
 
 
 export type Query_RootPost_By_PkArgs = {
-  _id: Scalars['objectId']['input'];
+  id: Scalars['Int']['input'];
 };
 
 
@@ -174,20 +413,7 @@ export type Query_RootUser_AggregateArgs = {
 
 
 export type Query_RootUser_By_PkArgs = {
-  _id: Scalars['objectId']['input'];
-};
-
-/** Boolean expression to compare columns of type "string". All fields are combined with logical 'AND'. */
-export type String_Mongodb_Comparison_Exp = {
-  _eq?: InputMaybe<Scalars['string']['input']>;
-  _gt?: InputMaybe<Scalars['string']['input']>;
-  _gte?: InputMaybe<Scalars['string']['input']>;
-  _in?: InputMaybe<Array<Scalars['string']['input']>>;
-  _is_null?: InputMaybe<Scalars['Boolean']['input']>;
-  _lt?: InputMaybe<Scalars['string']['input']>;
-  _lte?: InputMaybe<Scalars['string']['input']>;
-  _neq?: InputMaybe<Scalars['string']['input']>;
-  _nin?: InputMaybe<Array<Scalars['string']['input']>>;
+  id: Scalars['Int']['input'];
 };
 
 export type Subscription_Root = {
@@ -224,7 +450,7 @@ export type Subscription_RootPost_AggregateArgs = {
 
 
 export type Subscription_RootPost_By_PkArgs = {
-  _id: Scalars['objectId']['input'];
+  id: Scalars['Int']['input'];
 };
 
 
@@ -245,14 +471,13 @@ export type Subscription_RootUser_AggregateArgs = {
 
 
 export type Subscription_RootUser_By_PkArgs = {
-  _id: Scalars['objectId']['input'];
+  id: Scalars['Int']['input'];
 };
 
-/** columns and relationships of "user" */
 export type User = {
   __typename?: 'user';
-  _id: Scalars['objectId']['output'];
-  name: Scalars['string']['output'];
+  id: Scalars['Int']['output'];
+  name: Scalars['String']['output'];
 };
 
 /** aggregated selection of "user" */
@@ -265,7 +490,15 @@ export type User_Aggregate = {
 /** aggregate fields of "user" */
 export type User_Aggregate_Fields = {
   __typename?: 'user_aggregate_fields';
+  avg?: Maybe<User_Avg_Fields>;
   count: Scalars['Int']['output'];
+  max?: Maybe<User_Max_Fields>;
+  min?: Maybe<User_Min_Fields>;
+  stddev_pop?: Maybe<User_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<User_Stddev_Samp_Fields>;
+  sum?: Maybe<User_Sum_Fields>;
+  var_pop?: Maybe<User_Var_Pop_Fields>;
+  var_samp?: Maybe<User_Var_Samp_Fields>;
 };
 
 
@@ -275,46 +508,129 @@ export type User_Aggregate_FieldsCountArgs = {
   distinct?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+/** aggregate avg on columns */
+export type User_Avg_Fields = {
+  __typename?: 'user_avg_fields';
+  id?: Maybe<Scalars['Float']['output']>;
+};
+
 /** Boolean expression to filter rows from the table "user". All fields are combined with a logical 'AND'. */
 export type User_Bool_Exp = {
   _and?: InputMaybe<Array<User_Bool_Exp>>;
-  _id?: InputMaybe<ObjectId_Mongodb_Comparison_Exp>;
   _not?: InputMaybe<User_Bool_Exp>;
   _or?: InputMaybe<Array<User_Bool_Exp>>;
-  name?: InputMaybe<String_Mongodb_Comparison_Exp>;
+  id?: InputMaybe<Int_Mysql8_Comparison_Exp>;
+  name?: InputMaybe<String_Mysql8_Comparison_Exp>;
+};
+
+/** input type for inserting data into table "user" */
+export type User_Insert_Input = {
+  id?: InputMaybe<Scalars['Int']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** aggregate max on columns */
+export type User_Max_Fields = {
+  __typename?: 'user_max_fields';
+  id?: Maybe<Scalars['Int']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+};
+
+/** aggregate min on columns */
+export type User_Min_Fields = {
+  __typename?: 'user_min_fields';
+  id?: Maybe<Scalars['Int']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+};
+
+/** response of any mutation on the table "user" */
+export type User_Mutation_Response = {
+  __typename?: 'user_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<User>;
 };
 
 /** Ordering options when selecting data from "user". */
 export type User_Order_By = {
-  _id?: InputMaybe<Mongodb_Order_By>;
-  name?: InputMaybe<Mongodb_Order_By>;
+  id?: InputMaybe<Mysql8_Order_By>;
+  name?: InputMaybe<Mysql8_Order_By>;
+};
+
+/** primary key columns input for table: user */
+export type User_Pk_Columns_Input = {
+  id: Scalars['Int']['input'];
 };
 
 /** select columns of table "user" */
 export enum User_Select_Column {
   /** column name */
-  Id = '_id',
+  Id = 'id',
   /** column name */
   Name = 'name'
 }
 
+/** input type for updating data in table "user" */
+export type User_Set_Input = {
+  id?: InputMaybe<Scalars['Int']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type User_Stddev_Pop_Fields = {
+  __typename?: 'user_stddev_pop_fields';
+  id?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type User_Stddev_Samp_Fields = {
+  __typename?: 'user_stddev_samp_fields';
+  id?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate sum on columns */
+export type User_Sum_Fields = {
+  __typename?: 'user_sum_fields';
+  id?: Maybe<Scalars['Int']['output']>;
+};
+
+export type User_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<User_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: User_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type User_Var_Pop_Fields = {
+  __typename?: 'user_var_pop_fields';
+  id?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate var_samp on columns */
+export type User_Var_Samp_Fields = {
+  __typename?: 'user_var_samp_fields';
+  id?: Maybe<Scalars['Float']['output']>;
+};
+
 export type GetAllPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllPostsQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', _id: any, text: any, title: any, user_id: any, created: any }> };
+export type GetAllPostsQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', id: number, text: string, title: string, user_id: number, created: any }> };
 
 export type GetPostQueryVariables = Exact<{
-  id?: InputMaybe<Scalars['objectId']['input']>;
+  id?: InputMaybe<Scalars['Int']['input']>;
 }>;
 
 
-export type GetPostQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', text: any, title: any }> };
+export type GetPostQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', text: string, title: string }> };
 
 
 export const GetAllPostsDocument = gql`
     query GetAllPosts {
   post {
-    _id
+    id
     text
     title
     user_id
@@ -355,8 +671,8 @@ export type GetAllPostsLazyQueryHookResult = ReturnType<typeof useGetAllPostsLaz
 export type GetAllPostsSuspenseQueryHookResult = ReturnType<typeof useGetAllPostsSuspenseQuery>;
 export type GetAllPostsQueryResult = Apollo.QueryResult<GetAllPostsQuery, GetAllPostsQueryVariables>;
 export const GetPostDocument = gql`
-    query GetPost($id: objectId) {
-  post(where: {_id: {_eq: $id}}) {
+    query GetPost($id: Int) {
+  post(where: {id: {_eq: $id}}) {
     text
     title
   }

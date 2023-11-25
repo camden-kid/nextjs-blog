@@ -23,6 +23,17 @@ export default function Page() {
           </ul>
         </li>
         <li>
+          React
+          <ul>
+            <li>A library for web and native user interfaces.</li>
+            <li>
+              <a href="https://react.dev/" target="_blank">
+                https://react.dev/
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
           TypeScript
           <ul>
             <li>Extends JavaScript by adding types to the language.</li>
@@ -67,23 +78,12 @@ export default function Page() {
           </ul>
         </li>
         <li>
-          MongoDB
+          MySql
           <ul>
-            <li>A NoSQL database program.</li>
+            <li>A relational database management system.</li>
             <li>
-              <a href="https://www.mongodb.com/" target="_blank">
-                https://www.mongodb.com/
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          MongoDB Atlas (on AWS)
-          <ul>
-            <li>A fully managed MongoDB in the cloud.</li>
-            <li>
-              <a href="https://www.mongodb.com/atlas/database" target="_blank">
-                https://www.mongodb.com/atlas/database
+              <a href="https://www.mysql.com/" target="_blank">
+                https://www.mysql.com/
               </a>
             </li>
           </ul>

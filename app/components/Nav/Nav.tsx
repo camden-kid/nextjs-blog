@@ -18,6 +18,11 @@ export default function Nav(): JSX.Element {
     <nav className={styles.nav}>
       <List>
         <ListItem disablePadding>
+          <ListItemButton onClick={() => onListItemClick("/login")}>
+            <ListItemText primary="Log in" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
           <ListItemButton onClick={() => onListItemClick("/")}>
             <ListItemText primary="Home" />
           </ListItemButton>

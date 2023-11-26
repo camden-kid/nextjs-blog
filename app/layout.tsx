@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import MainLayout from "./components/MainLayout/MainLayout";
+import MainLayout from "./components/main-layout/MainLayout";
 import { MainProvider } from "./contexts/main/MainContext";
 import { ApolloWrapper } from "./utilities/ApolloWrapper";
 

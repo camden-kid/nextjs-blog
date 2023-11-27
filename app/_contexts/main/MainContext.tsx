@@ -31,7 +31,7 @@ const mainReducer = (main: MainContext, action: { type: string; user: string }) 
   }
 };
 
-const storedLoggedInUser = localStorage.getItem("loggedInUser");
+const storedLoggedInUser = (typeof window === "undefined") ? "" : window.localStorage.getItem("loggedInUser");
 const initialMain: MainContext = {
   loggedInUser: storedLoggedInUser || "",
 };

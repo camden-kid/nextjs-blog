@@ -19,7 +19,7 @@ export default function Blog() {
       <TextField fullWidth required label="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
       <TextField fullWidth required label="Text" value={text} onChange={(e) => setText(e.target.value)} />
       <Button type="submit" variant="contained" disabled={!title || !text}>
-        Submit
+        Add new post
       </Button>
     </Stack>
   );

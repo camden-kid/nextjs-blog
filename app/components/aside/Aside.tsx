@@ -20,7 +20,7 @@ export default function Aside(): JSX.Element {
   return (
     <aside className={styles.aside}>
       <List>
-        <ListSubheader sx={{ bgcolor: "#b2d6fd" }}>Recent posts</ListSubheader>
+        <ListSubheader sx={{ bgcolor: "#edf5ff" }}>Recent posts</ListSubheader>
         {data?.post.map(({ id, title, user_name, created }) => (
           <ListItem disablePadding key={id}>
             <ListItemButton onClick={() => onListItemClick(id)}>

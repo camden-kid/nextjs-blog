@@ -31,8 +31,9 @@ const mainReducer = (main: MainContext, action: { type: string; user: string }) 
   }
 };
 
+const storedLoggedInUser = localStorage.getItem("loggedInUser");
 const initialMain: MainContext = {
-  loggedInUser: "",
+  loggedInUser: storedLoggedInUser || "",
 };
 
 export const MainContext = createContext<MainContext>(initialMain);

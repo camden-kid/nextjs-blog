@@ -9,7 +9,6 @@ export default function MainLayout({ children }): JSX.Element {
     <>
       <Header />
       <div className={styles.container}>
-        <Nav />
         <main className={styles.main}>{children}</main>
         <Aside />
       </div>

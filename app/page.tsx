@@ -60,7 +60,7 @@ export default function Page() {
   return (
     <div className={styles.container}>
       <List>
-        <ListSubheader>This blogger is built with the following:</ListSubheader>
+        <ListSubheader>This blogger uses the following:</ListSubheader>
         {platformItems.map(({ title, text, url }) => (
           <ListItem disablePadding key={title}>
             <ListItemButton onClick={() => window.open(url, "_blank")?.focus()}>

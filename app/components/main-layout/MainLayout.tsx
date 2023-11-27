@@ -1,5 +1,4 @@
 import Aside from "../aside/Aside";
-import Nav from "../nav/Nav";
 import styles from "./MainLayout.module.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";

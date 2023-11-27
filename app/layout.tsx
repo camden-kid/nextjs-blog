@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "./_styles/globals.css";
 import MainLayout from "./_components/main-layout/MainLayout";
 import { MainProvider } from "./_contexts/main/MainContext";
 import { ApolloWrapper } from "./_utilities/ApolloWrapper";

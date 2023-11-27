@@ -45,9 +45,11 @@ export default function Header(): JSX.Element {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Blogger
           </Typography>
-          <Button color="inherit" onClick={() => onListItemClick("/blog")}>
-            Blog
-          </Button>
+          {mainContext.loggedInUser && (
+            <Button color="inherit" onClick={() => onListItemClick("/blog")}>
+              Blog
+            </Button>
+          )}
           <Button color="inherit" onClick={() => onListItemClick("/")}>
             Home
           </Button>

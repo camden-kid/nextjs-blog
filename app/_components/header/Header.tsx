@@ -24,7 +24,7 @@ export default function Header(): JSX.Element {
 
   const handleClose = (user: string) => {
     dispatch({ type: "logIn", user });
-    localStorage.setItem("loggedInUser", user);
+    window.localStorage.setItem("loggedInUser", user);
     setAnchorEl(null);
   };
 
@@ -34,7 +34,7 @@ export default function Header(): JSX.Element {
 
   const logout = () => {
     dispatch({ type: "logOut", user: mainContext.loggedInUser });
-    localStorage.removeItem("loggedInUser");
+    window.localStorage.removeItem("loggedInUser");
     router.push("/");
   };
 

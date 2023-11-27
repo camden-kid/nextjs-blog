@@ -64,7 +64,7 @@ export default function Page() {
         {platformItems.map(({ title, text, url }) => (
           <ListItem disablePadding key={title}>
             <ListItemButton onClick={() => window.open(url, "_blank")?.focus()}>
-              <ListItemText primary={title} secondary={text} />
+              <ListItemText primary={title} secondary={`${text}.`} />
             </ListItemButton>
           </ListItem>
         ))}

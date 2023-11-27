@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { useGetAllPostsQuery } from "../../generated/graphql";
+import { useGetAllPostsQuery } from "../../_generated/graphql";
 import ListSubheader from "@mui/material/ListSubheader";
 
 export default function Aside(): JSX.Element {

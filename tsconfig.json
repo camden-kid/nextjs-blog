@@ -27,7 +27,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "app/components/date.js",
+    "app/_components/date.js",
     ".next/types/**/*.ts"
   ],
   "exclude": [

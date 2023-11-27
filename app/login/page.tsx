@@ -2,7 +2,7 @@
 
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
-import { MainDispatch, useMainDispatch } from "../contexts/main/MainContext";
+import { MainDispatch, useMainDispatch } from "../_contexts/main/MainContext";
 
 export default function Login(): JSX.Element {
   const dispatch = useMainDispatch() as MainDispatch;

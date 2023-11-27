@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { MainDispatch, useMain, useMainDispatch } from "../../contexts/main/MainContext";
+import { MainDispatch, useMain, useMainDispatch } from "../../_contexts/main/MainContext";
 
 export default function Header(): JSX.Element {
   const router = useRouter();

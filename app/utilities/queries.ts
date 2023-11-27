@@ -10,6 +10,7 @@ gql`
       title
       user_id
       created
+      user_name
     }
   }
 `;
@@ -19,6 +20,8 @@ gql`
     post(where: { id: { _eq: $id } }) {
       text
       title
+      created
+      user_name
     }
   }
 `;

@@ -20,11 +20,11 @@ export default function Aside(): JSX.Element {
   return (
     <aside className={styles.aside}>
       <List>
-        <ListSubheader sx={{bgcolor: "#b2d6fd"}}>Recent posts</ListSubheader>
-        {data?.post.map(({ id, title, created }) => (
+        <ListSubheader sx={{ bgcolor: "#b2d6fd" }}>Recent posts</ListSubheader>
+        {data?.post.map(({ id, title, user_name, created }) => (
           <ListItem disablePadding key={id}>
             <ListItemButton onClick={() => onListItemClick(id)}>
-              <ListItemText primary={title} secondary={new Date(created).toLocaleDateString()} />
+              <ListItemText primary={title} secondary={`${user_name} - ${new Date(created).toLocaleDateString()}`} />
             </ListItemButton>
           </ListItem>
         ))}

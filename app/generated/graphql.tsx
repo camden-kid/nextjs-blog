@@ -180,6 +180,7 @@ export type Post = {
   text: Scalars['String']['output'];
   title: Scalars['String']['output'];
   user_id: Scalars['Int']['output'];
+  user_name: Scalars['String']['output'];
 };
 
 /** aggregated selection of "post" */
@@ -228,6 +229,7 @@ export type Post_Bool_Exp = {
   text?: InputMaybe<String_Mysql8_Comparison_Exp>;
   title?: InputMaybe<String_Mysql8_Comparison_Exp>;
   user_id?: InputMaybe<Int_Mysql8_Comparison_Exp>;
+  user_name?: InputMaybe<String_Mysql8_Comparison_Exp>;
 };
 
 /** input type for inserting data into table "post" */
@@ -237,6 +239,7 @@ export type Post_Insert_Input = {
   text?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   user_id?: InputMaybe<Scalars['Int']['input']>;
+  user_name?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** aggregate max on columns */
@@ -247,6 +250,7 @@ export type Post_Max_Fields = {
   text?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   user_id?: Maybe<Scalars['Int']['output']>;
+  user_name?: Maybe<Scalars['String']['output']>;
 };
 
 /** aggregate min on columns */
@@ -257,6 +261,7 @@ export type Post_Min_Fields = {
   text?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   user_id?: Maybe<Scalars['Int']['output']>;
+  user_name?: Maybe<Scalars['String']['output']>;
 };
 
 /** response of any mutation on the table "post" */
@@ -275,6 +280,7 @@ export type Post_Order_By = {
   text?: InputMaybe<Mysql8_Order_By>;
   title?: InputMaybe<Mysql8_Order_By>;
   user_id?: InputMaybe<Mysql8_Order_By>;
+  user_name?: InputMaybe<Mysql8_Order_By>;
 };
 
 /** primary key columns input for table: post */
@@ -293,7 +299,9 @@ export enum Post_Select_Column {
   /** column name */
   Title = 'title',
   /** column name */
-  UserId = 'user_id'
+  UserId = 'user_id',
+  /** column name */
+  UserName = 'user_name'
 }
 
 /** input type for updating data in table "post" */
@@ -303,6 +311,7 @@ export type Post_Set_Input = {
   text?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   user_id?: InputMaybe<Scalars['Int']['input']>;
+  user_name?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** aggregate stddev_pop on columns */
@@ -611,14 +620,14 @@ export type User_Var_Samp_Fields = {
 export type GetAllPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllPostsQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', id: number, text: string, title: string, user_id: number, created: number }> };
+export type GetAllPostsQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', id: number, text: string, title: string, user_id: number, created: number, user_name: string }> };
 
 export type GetPostQueryVariables = Exact<{
   id?: InputMaybe<Scalars['Int']['input']>;
 }>;
 
 
-export type GetPostQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', text: string, title: string }> };
+export type GetPostQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', text: string, title: string, created: number, user_name: string }> };
 
 export type AddPostMutationVariables = Exact<{
   created?: InputMaybe<Scalars['Int']['input']>;
@@ -639,6 +648,7 @@ export const GetAllPostsDocument = gql`
     title
     user_id
     created
+    user_name
   }
 }
     `;
@@ -679,6 +689,8 @@ export const GetPostDocument = gql`
   post(where: {id: {_eq: $id}}) {
     text
     title
+    created
+    user_name
   }
 }
     `;

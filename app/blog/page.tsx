@@ -30,7 +30,7 @@ export default function Blog() {
   return (
     <Stack component="form" padding={4} spacing={2} onSubmit={onSubmit}>
       <Typography variant="h5" component="div">
-        Add a new post
+        Add new post
       </Typography>
       <TextField fullWidth required label="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
       <TextField fullWidth required label="Text" value={text} onChange={(e) => setText(e.target.value)} />

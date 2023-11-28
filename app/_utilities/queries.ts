@@ -4,7 +4,7 @@ import { gql } from "@apollo/client";
 
 gql`
   query GetAllPosts {
-    post {
+    post(order_by: { created: desc }) {
       id
       text
       title

@@ -1,7 +1,9 @@
 import Aside from "../aside/Aside";
 import styles from "./MainLayout.module.css";
-import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import dynamic from "next/dynamic";
+
+const Header = dynamic(() => import("../header/Header"), { ssr: false });
 
 export default function MainLayout({ children }): JSX.Element {
   return (

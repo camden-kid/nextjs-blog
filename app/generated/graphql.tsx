@@ -15,6 +15,7 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
   Float: { input: number; output: number; }
+  datetime: { input: any; output: any; }
 };
 
 /** Boolean expression to compare columns of type "Int". All fields are combined with logical 'AND'. */
@@ -42,6 +43,19 @@ export type String_Mysql8_Comparison_Exp = {
   _neq?: InputMaybe<Scalars['String']['input']>;
   _nin?: InputMaybe<Array<Scalars['String']['input']>>;
   contains?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Boolean expression to compare columns of type "datetime". All fields are combined with logical 'AND'. */
+export type Datetime_Mysql8_Comparison_Exp = {
+  _eq?: InputMaybe<Scalars['datetime']['input']>;
+  _gt?: InputMaybe<Scalars['datetime']['input']>;
+  _gte?: InputMaybe<Scalars['datetime']['input']>;
+  _in?: InputMaybe<Array<Scalars['datetime']['input']>>;
+  _is_null?: InputMaybe<Scalars['Boolean']['input']>;
+  _lt?: InputMaybe<Scalars['datetime']['input']>;
+  _lte?: InputMaybe<Scalars['datetime']['input']>;
+  _neq?: InputMaybe<Scalars['datetime']['input']>;
+  _nin?: InputMaybe<Array<Scalars['datetime']['input']>>;
 };
 
 /** mutation root */
@@ -175,11 +189,10 @@ export enum Mysql8_Order_By {
 
 export type Post = {
   __typename?: 'post';
-  created: Scalars['Int']['output'];
+  created?: Maybe<Scalars['datetime']['output']>;
   id: Scalars['Int']['output'];
   text: Scalars['String']['output'];
   title: Scalars['String']['output'];
-  user_id: Scalars['Int']['output'];
   user_name: Scalars['String']['output'];
 };
 
@@ -214,9 +227,7 @@ export type Post_Aggregate_FieldsCountArgs = {
 /** aggregate avg on columns */
 export type Post_Avg_Fields = {
   __typename?: 'post_avg_fields';
-  created?: Maybe<Scalars['Float']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
-  user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 /** Boolean expression to filter rows from the table "post". All fields are combined with a logical 'AND'. */
@@ -224,43 +235,37 @@ export type Post_Bool_Exp = {
   _and?: InputMaybe<Array<Post_Bool_Exp>>;
   _not?: InputMaybe<Post_Bool_Exp>;
   _or?: InputMaybe<Array<Post_Bool_Exp>>;
-  created?: InputMaybe<Int_Mysql8_Comparison_Exp>;
+  created?: InputMaybe<Datetime_Mysql8_Comparison_Exp>;
   id?: InputMaybe<Int_Mysql8_Comparison_Exp>;
   text?: InputMaybe<String_Mysql8_Comparison_Exp>;
   title?: InputMaybe<String_Mysql8_Comparison_Exp>;
-  user_id?: InputMaybe<Int_Mysql8_Comparison_Exp>;
   user_name?: InputMaybe<String_Mysql8_Comparison_Exp>;
 };
 
 /** input type for inserting data into table "post" */
 export type Post_Insert_Input = {
-  created?: InputMaybe<Scalars['Int']['input']>;
+  created?: InputMaybe<Scalars['datetime']['input']>;
   id?: InputMaybe<Scalars['Int']['input']>;
   text?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
-  user_id?: InputMaybe<Scalars['Int']['input']>;
   user_name?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** aggregate max on columns */
 export type Post_Max_Fields = {
   __typename?: 'post_max_fields';
-  created?: Maybe<Scalars['Int']['output']>;
   id?: Maybe<Scalars['Int']['output']>;
   text?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
-  user_id?: Maybe<Scalars['Int']['output']>;
   user_name?: Maybe<Scalars['String']['output']>;
 };
 
 /** aggregate min on columns */
 export type Post_Min_Fields = {
   __typename?: 'post_min_fields';
-  created?: Maybe<Scalars['Int']['output']>;
   id?: Maybe<Scalars['Int']['output']>;
   text?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
-  user_id?: Maybe<Scalars['Int']['output']>;
   user_name?: Maybe<Scalars['String']['output']>;
 };
 
@@ -279,7 +284,6 @@ export type Post_Order_By = {
   id?: InputMaybe<Mysql8_Order_By>;
   text?: InputMaybe<Mysql8_Order_By>;
   title?: InputMaybe<Mysql8_Order_By>;
-  user_id?: InputMaybe<Mysql8_Order_By>;
   user_name?: InputMaybe<Mysql8_Order_By>;
 };
 
@@ -299,43 +303,34 @@ export enum Post_Select_Column {
   /** column name */
   Title = 'title',
   /** column name */
-  UserId = 'user_id',
-  /** column name */
   UserName = 'user_name'
 }
 
 /** input type for updating data in table "post" */
 export type Post_Set_Input = {
-  created?: InputMaybe<Scalars['Int']['input']>;
+  created?: InputMaybe<Scalars['datetime']['input']>;
   id?: InputMaybe<Scalars['Int']['input']>;
   text?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
-  user_id?: InputMaybe<Scalars['Int']['input']>;
   user_name?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** aggregate stddev_pop on columns */
 export type Post_Stddev_Pop_Fields = {
   __typename?: 'post_stddev_pop_fields';
-  created?: Maybe<Scalars['Float']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
-  user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 /** aggregate stddev_samp on columns */
 export type Post_Stddev_Samp_Fields = {
   __typename?: 'post_stddev_samp_fields';
-  created?: Maybe<Scalars['Float']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
-  user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 /** aggregate sum on columns */
 export type Post_Sum_Fields = {
   __typename?: 'post_sum_fields';
-  created?: Maybe<Scalars['Int']['output']>;
   id?: Maybe<Scalars['Int']['output']>;
-  user_id?: Maybe<Scalars['Int']['output']>;
 };
 
 export type Post_Updates = {
@@ -348,17 +343,13 @@ export type Post_Updates = {
 /** aggregate var_pop on columns */
 export type Post_Var_Pop_Fields = {
   __typename?: 'post_var_pop_fields';
-  created?: Maybe<Scalars['Float']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
-  user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 /** aggregate var_samp on columns */
 export type Post_Var_Samp_Fields = {
   __typename?: 'post_var_samp_fields';
-  created?: Maybe<Scalars['Float']['output']>;
   id?: Maybe<Scalars['Float']['output']>;
-  user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 export type Query_Root = {
@@ -620,20 +611,20 @@ export type User_Var_Samp_Fields = {
 export type GetAllPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllPostsQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', id: number, text: string, title: string, user_id: number, created: number, user_name: string }> };
+export type GetAllPostsQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', id: number, text: string, title: string, created?: any | null, user_name: string }> };
 
 export type GetPostQueryVariables = Exact<{
   id?: InputMaybe<Scalars['Int']['input']>;
 }>;
 
 
-export type GetPostQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', text: string, title: string, created: number, user_name: string }> };
+export type GetPostQuery = { __typename?: 'query_root', post: Array<{ __typename?: 'post', text: string, title: string, created?: any | null, user_name: string }> };
 
 export type AddPostMutationVariables = Exact<{
-  created?: InputMaybe<Scalars['Int']['input']>;
+  created?: InputMaybe<Scalars['datetime']['input']>;
   text?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
-  user_id?: InputMaybe<Scalars['Int']['input']>;
+  user_name?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
@@ -646,7 +637,6 @@ export const GetAllPostsDocument = gql`
     id
     text
     title
-    user_id
     created
     user_name
   }
@@ -728,9 +718,9 @@ export type GetPostLazyQueryHookResult = ReturnType<typeof useGetPostLazyQuery>;
 export type GetPostSuspenseQueryHookResult = ReturnType<typeof useGetPostSuspenseQuery>;
 export type GetPostQueryResult = Apollo.QueryResult<GetPostQuery, GetPostQueryVariables>;
 export const AddPostDocument = gql`
-    mutation AddPost($created: Int, $text: String, $title: String, $user_id: Int) {
+    mutation AddPost($created: datetime, $text: String, $title: String, $user_name: String) {
   insert_post_one(
-    object: {created: $created, text: $text, title: $title, user_id: $user_id}
+    object: {created: $created, text: $text, title: $title, user_name: $user_name}
   ) {
     id
   }
@@ -754,7 +744,7 @@ export type AddPostMutationFn = Apollo.MutationFunction<AddPostMutation, AddPost
  *      created: // value for 'created'
  *      text: // value for 'text'
  *      title: // value for 'title'
- *      user_id: // value for 'user_id'
+ *      user_name: // value for 'user_name'
  *   },
  * });
  */

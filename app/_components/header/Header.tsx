@@ -46,9 +46,14 @@ export default function Header(): JSX.Element {
             Blogger
           </Typography>
           {mainContext.loggedInUser && (
-            <Button color="inherit" onClick={() => onListItemClick("/blog")}>
-              Blog
-            </Button>
+            <>
+              <Button color="inherit" onClick={() => onListItemClick("/blog")}>
+                Blog
+              </Button>
+              <Button color="inherit" onClick={() => onListItemClick("/posts")}>
+                Posts
+              </Button>
+            </>
           )}
           <Button color="inherit" onClick={() => onListItemClick("/")}>
             Home

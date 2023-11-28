@@ -8,7 +8,6 @@ gql`
       id
       text
       title
-      user_id
       created
       user_name
     }
@@ -27,8 +26,8 @@ gql`
 `;
 
 gql`
-  mutation AddPost($created: Int, $text: String, $title: String, $user_id: Int) {
-    insert_post_one(object: { created: $created, text: $text, title: $title, user_id: $user_id }) {
+  mutation AddPost($created: datetime, $text: String, $title: String, $user_name: String) {
+    insert_post_one(object: { created: $created, text: $text, title: $title, user_name: $user_name }) {
       id
     }
   }

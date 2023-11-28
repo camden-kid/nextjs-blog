@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetPostQuery } from "../../_generated/graphql";
+import { useGetPostQuery } from "../../generated/graphql";
 
 export default function Post({ params }) {
   const { data } = useGetPostQuery({

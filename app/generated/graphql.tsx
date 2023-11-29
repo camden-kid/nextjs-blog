@@ -633,7 +633,7 @@ export type AddPostMutation = { __typename?: 'mutation_root', insert_post_one?: 
 
 export const GetAllPostsDocument = gql`
     query GetAllPosts {
-  post(order_by: {created: desc}) {
+  post(order_by: {created: desc}, limit: 5) {
     id
     text
     title

@@ -30,6 +30,11 @@ const platformItems = [
     url: "https://www.typescriptlang.org/",
   },
   {
+    title: "MUI",
+    text: "A React component library",
+    url: "https://mui.com/",
+  },
+  {
     title: "GraphQL",
     text: "A data query and manipulation language for APIs and a query runtime engine",
     url: "https://graphql.org/",

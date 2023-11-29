@@ -5,13 +5,15 @@ import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { SyntheticEvent, useState } from "react";
-import { useAddPostMutation } from "../generated/graphql";
+import { GetAllPostsDocument, useAddPostMutation } from "../generated/graphql";
 import { useMain } from "../_contexts/main/MainContext";
 
 export default function Blog() {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  const [addPost, { loading, error, data }] = useAddPostMutation();
+  const [addPost, { loading, error, data }] = useAddPostMutation({
+    refetchQueries: [GetAllPostsDocument],
+  });
   const mainContext = useMain();
 
   const onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
